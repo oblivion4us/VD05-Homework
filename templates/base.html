@@ -1,10 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+
+    {% endblock %}
+  </title>
+  <link rel="icon" href="/static/images/Loqi_Logo32x32.png" type="image/png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asset&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+  <style>
+    /* Фон для панели навигации */
+    .nav-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px; /* 210px для панели + 10px отступов */
+      height: 100vh;
+      background-color: #000000;
+      padding: 7px; /* Внутренний отступ для панели навигации */
+      box-sizing: border-box;
+    }
+
+    /* Панель навигации */
+    .nav-panel {
+      width: 210px;
+      height: 100%;
+      background-color: #FF4500;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border: 3px solid white;
+    }
+    .nav-panel .nav-link {
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-family: "Unbounded", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: bold;
+      text-shadow:
+      -1px -1px 0 #000, /* левый верхний */
+      1px -1px 0 #000,  /* правый верхний */
+      -1px 1px 0 #000,  /* левый нижний */
+      1px 1px 0 #000;   /* правый нижний */
+    }
+    .nav-panel .nav-link:hover {
+      color: #000000;
+    }
+    .home-button {
+      text-align: center;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .home-button img {
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+    }
+    .home-button div {
+      font-size: 14px;
+      font-family: "Asset", serif;
+      font-weight: 400;
+      text-shadow:
+      -1px -1px 0 #000, /* левый верхний */
+      1px -1px 0 #000,  /* правый верхний */
+      -1px 1px 0 #000,  /* левый нижний */
+      1px 1px 0 #000;   /* правый нижний */
+    }
+    .home-button:hover {
+      color: #000000;
+    }
+
+    {% block style %}
+
+    {% endblock %}
+  </style>
 </head>
 <body>
+  <!-- Фон для панели навигации -->
+  <div class="nav-background">
+    <!-- Навигационная панель -->
+  <div class="nav-panel">
+    <a href="/" class="home-button">
+      <img src="/static/images/Loqi_Logo.png" alt="Home Icon">
+      <div>LOQIEMEAN</div>
+    </a>
+      <nav class="nav flex-column text-center">
+        <a class="nav-link" href="/discography/">Дискография</a>
+        <a class="nav-link" href="#music">Фильмография</a>
+        <a class="nav-link" href="/contacts/">Контакты</a>
+      </nav>
+    </div>
+  </div>
 
+  {% block content %}
+
+    {% endblock %}
+
+  <!-- Bootstrap JS и Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
