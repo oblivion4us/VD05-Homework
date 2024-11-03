@@ -6,11 +6,15 @@ app = Flask(__name__)
 def home():
     context = {
 
+
     }
-    return render_template("index.html")
+    return render_template("base.html", **context)
 
 @app.route("/discography/")
 def discography():
+    context = {
+
+    }
     return render_template("discography.html")
 
 @app.route("/contacts/")

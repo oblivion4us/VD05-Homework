@@ -1,3 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Дискография
+{% endblock %}
+
+{% block style %}
 /* Центральная секция с каруселью и описанием */
     .main-content {
       background-color: #000000;
@@ -38,7 +45,9 @@
       -1px 1px 0 #000,  /* левый нижний */
       1px 1px 0 #000;   /* правый нижний */
     }
+{% endblock %}
 
+{% block content %}
 <!-- Центральная секция -->
   <div id="home" class="main-content">
     <!-- Карусель -->
@@ -80,3 +89,4 @@
       </p>
     </div>
   </div>
+{% endblock %}

@@ -1,3 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Контакты
+{% endblock %}
+
+{% block style %}
 /* Задний фон */
     .main-content {
       background-color: #000000;
@@ -92,7 +99,9 @@
       text-decoration: underline;
       color: #000000;
     }
+{% endblock %}
 
+{% block content %}
 <div id="home" class="main-content">
     <div class="video-container">
       <video autoplay loop muted playsinline class="background-video" id="backgroundVideo">
@@ -120,7 +129,9 @@
       <a href="https://youtube.com/@loqiemean?si=l_KpZ7uFu7oLULAK" target="_blank">YouTube</a>
     </div>
   </div>
+{% endblock %}
 
+{% block script %}
   <script>
     const video = document.getElementById('backgroundVideo');
     const muteToggle = document.getElementById('muteToggle');
@@ -138,3 +149,4 @@
       }
     });
   </script>
+{% endblock %}
