@@ -4,22 +4,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    context = {
+    return render_template("home.html")
 
-
-    }
-    return render_template("base.html", **context)
-
-@app.route("/discography/")
+@app.route("/")
 def discography():
-    context = {
-
-    }
     return render_template("discography.html")
 
 @app.route("/contacts/")
 def contacts():
-    return render_template("contacts.html")
+    return render_template("about.html")
 
 if __name__ == "__main__":
     app.run()
